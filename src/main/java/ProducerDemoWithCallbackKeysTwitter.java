@@ -14,10 +14,10 @@ public class ProducerDemoWithCallbackKeysTwitter {
     // twitter4j tutorial
     // https://linuxhint.com/twitter4j-tutorial/
 
-    static final String CONSUMER_KEY = "you-key";
-    static final String CONSUMER_SECRET = "secret";
-    static final String ACCESS_TOKEN = "token";
-    static final String ACCESS_TOKEN_SECRET = "token-secret";
+    static final String CONSUMER_KEY = "XQZKndRyocIMxrw7b0CnLoYcI";
+    static final String CONSUMER_SECRET = "yBrHtIqdpZFKHuGGKrmipjv78lgHXUnmHvtCfdcEDEWB5d5IkI";
+    static final String ACCESS_TOKEN = "057440403615744-7DYaHDy5JvKpOVEBCmljBGpju3rqUS1033";
+    static final String ACCESS_TOKEN_SECRET = "gV1P1Z1OwykPRWjBFgvUodhsbQD9IsZ9afTU1CgAPOaRI";
 
     public static Twitter getTwitterInstance() {
         ConfigurationBuilder cb = new ConfigurationBuilder();
@@ -32,7 +32,7 @@ public class ProducerDemoWithCallbackKeysTwitter {
 
     private static QueryResult findTweetsByKeyWord(Twitter twitter, String searchTerm) throws TwitterException {
 
-        Query query = new Query("source:" + searchTerm);
+        Query query = new Query(searchTerm);
         return twitter.search(query);
     }
 
@@ -58,11 +58,12 @@ public class ProducerDemoWithCallbackKeysTwitter {
 
         // query tweets by a key word
         QueryResult queryResult = findTweetsByKeyWord(twitter, "New York");
-        System.out.println("Size of queryResult: " + queryResult.getCount());
+        List<Status> tweets = queryResult.getTweets();
+        logger.info("Size of tweets: " + tweets.size());
 
-        // feed producer with tweets
         for (Status status : queryResult.getTweets()) {
-            System.out.println("@" + status.getUser().getScreenName() + ":" + status.getText());
+            //System.out.println("@" + status.getUser().getScreenName() + ":" + status.getText());
+            logger.info("@" + status.getUser().getScreenName() + ":" + status.getText());
 
             // feed consumer with tweet data
             String topic = "first_topic";
