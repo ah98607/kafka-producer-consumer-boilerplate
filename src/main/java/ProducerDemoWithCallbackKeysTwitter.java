@@ -18,7 +18,7 @@ public class ProducerDemoWithCallbackKeysTwitter {
     // please replace them with yours
     static final String CONSUMER_KEY = "XQZKndRyocIMxrw7b0CnLoYcI";
     static final String CONSUMER_SECRET = "yBrHtIqdpZFKHuGGKrmipjv78lgHXUnmHvtCfdcEDEWB5d5IkI";
-    static final String ACCESS_TOKEN = "    057440403615744-7DYaHDy5JvKpOVEBCmljBGpju3rqUS1033";
+    static final String ACCESS_TOKEN = "057440403615744-7DYaHDy5JvKpOVEBCmljBGpju3rqUS1033";
     static final String ACCESS_TOKEN_SECRET = "gV1P1Z1OwykPRWjBFgvUodhsbQD9IsZ9afTU1CgAPOaRI";
 
     public static Twitter getTwitterInstance() {
