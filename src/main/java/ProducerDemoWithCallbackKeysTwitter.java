@@ -14,9 +14,11 @@ public class ProducerDemoWithCallbackKeysTwitter {
     // twitter4j tutorial
     // https://linuxhint.com/twitter4j-tutorial/
 
+    // access keys and tokens have been intentionally modified
+    // please replace them with yours
     static final String CONSUMER_KEY = "XQZKndRyocIMxrw7b0CnLoYcI";
     static final String CONSUMER_SECRET = "yBrHtIqdpZFKHuGGKrmipjv78lgHXUnmHvtCfdcEDEWB5d5IkI";
-    static final String ACCESS_TOKEN = "057440403615744-7DYaHDy5JvKpOVEBCmljBGpju3rqUS1033";
+    static final String ACCESS_TOKEN = "    057440403615744-7DYaHDy5JvKpOVEBCmljBGpju3rqUS1033";
     static final String ACCESS_TOKEN_SECRET = "gV1P1Z1OwykPRWjBFgvUodhsbQD9IsZ9afTU1CgAPOaRI";
 
     public static Twitter getTwitterInstance() {
@@ -30,10 +32,11 @@ public class ProducerDemoWithCallbackKeysTwitter {
         return tf.getInstance();
     }
 
-    private static QueryResult findTweetsByKeyWord(Twitter twitter, String searchTerm) throws TwitterException {
+    private static List<Status> findTweetsByKeyWord(Twitter twitter, String searchTerm) throws TwitterException {
 
         Query query = new Query(searchTerm);
-        return twitter.search(query);
+        QueryResult queryResult = twitter.search(query);
+        return queryResult.getTweets();
     }
 
     public static void main(String[] args) throws TwitterException {
@@ -57,11 +60,10 @@ public class ProducerDemoWithCallbackKeysTwitter {
         Twitter twitter = getTwitterInstance();
 
         // query tweets by a key word
-        QueryResult queryResult = findTweetsByKeyWord(twitter, "New York");
-        List<Status> tweets = queryResult.getTweets();
+        List<Status> tweets = findTweetsByKeyWord(twitter, "New York");
         logger.info("Size of tweets: " + tweets.size());
 
-        for (Status status : queryResult.getTweets()) {
+        for (Status status : tweets) {
             //System.out.println("@" + status.getUser().getScreenName() + ":" + status.getText());
             logger.info("@" + status.getUser().getScreenName() + ":" + status.getText());
 

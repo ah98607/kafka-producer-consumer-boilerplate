@@ -5,4 +5,4 @@
     * Launch Kafka broker: `kafka-server-start.sh config/server.properties`
     * Run Java Producer
     * Run Java Consumer, Or run consumer in terminal
-* Note: access keys and tokens have been intentiionally modified. Please replace them with yours.
+* Note: access keys and tokens have been intentionally modified. Please replace them with yours.
