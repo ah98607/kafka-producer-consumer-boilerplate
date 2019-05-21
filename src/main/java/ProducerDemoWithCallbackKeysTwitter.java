@@ -16,10 +16,10 @@ public class ProducerDemoWithCallbackKeysTwitter {
 
     // access keys and tokens have been intentionally modified
     // please replace them with yours
-    static final String CONSUMER_KEY = "YcIXQZKndRyocIMxrw7b0CnLo";
-    static final String CONSUMER_SECRET = "IkIyBrHtIqdpZFKHuGGKrmipjv78lgHXUnmHvtCfdcEDEWB5d5";
-    static final String ACCESS_TOKEN = "033057440403615744-7DYaHDy5JvKpOVEBCmljBGpju3rqUS1";
-    static final String ACCESS_TOKEN_SECRET = "aRIgV1P1Z1OwykPRWjBFgvUodhsbQD9IsZ9afTU1CgAP1";
+    static final String CONSUMER_KEY = "lfi2JetNeFixCcmbzDbBWcIY2";
+    static final String CONSUMER_SECRET = "YRN3itTwvx7iLdlERU6HoTDv7xBHRAvrDEOPNsAg7eRwmJqfug";
+    static final String ACCESS_TOKEN = "3057440403615744-7DYaHDy5JvKpOVEBCmljBGpju3rqUS103";
+    static final String ACCESS_TOKEN_SECRET = "gV1P1Z1OwykPRWjBFgvUodhsbQD9IsZ9afTU1CgAPOaRI";
 
     public static Twitter getTwitterInstance() {
         ConfigurationBuilder cb = new ConfigurationBuilder();
